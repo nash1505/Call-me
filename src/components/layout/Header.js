@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Logo from './partials/Logo';
 import {auth,firestore} from "../firebase/firebase"
+import Button from '../elements/Button';
 const propTypes = {
   navPosition: PropTypes.string,
   hideNav: PropTypes.bool,
@@ -35,7 +36,7 @@ const Header = ({
   const [isLogged,setIsLogged] = useState(false);
   const nav = useRef(null);
   const hamburger = useRef(null);
-
+  const history = useHistory();
   useEffect(() => {
     isActive && openMenu();
     document.addEventListener('keydown', keyPress);
@@ -60,11 +61,17 @@ const Header = ({
   },[])
 
   const logOutUser = async () => {
+    if(!isLogged)
+    {
+      history.push("login")
+      return true;
+    }else{
     const confirm = window.confirm("Are You Sure To Logout ?");
   if (confirm) {
     await onlineStatusUpdate(userName.email);
     await auth.signOut();
     window.location.reload();
+  }
   }
 };
 const onlineStatusUpdate = async (email) => {
@@ -157,7 +164,8 @@ const onlineStatusUpdate = async (email) => {
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link to={"/login"} className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>{isLogged ? "Logout" : "Sign up" }</Link>
+                      <Button className="button button-primary button-wide-mobile button-sm" onClick={logOutUser}>{isLogged ? "Logout" : "Login" }</Button>
+                      <Link to="/sign" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>{isLogged ? "Signup" : "Sign up" }</Link>
                       </li>
                     </ul>}
                 </div>

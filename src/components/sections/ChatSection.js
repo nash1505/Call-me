@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { SectionSplitProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
+import RateReviewIcon from '@material-ui/icons/RateReview';
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -70,7 +71,7 @@ const ChatSection = ({
   const sectionHeader = {
     title: "Workflow that just works",
     paragraph:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.",
+      "Share Your Thoughts with chatting with friends and family, Collegues. Whenever Wherever Needed.",
   };
   function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -172,7 +173,7 @@ const ChatSection = ({
     await setShowNewChatForm(false);
 
     await props.searchChat("");
-    
+    history.push("/dashboard")
   };
 
   // const searchChat1 = async () => {
@@ -250,10 +251,18 @@ const ChatSection = ({
                 )}
                 data-reveal-container=".split-item"
               >
+                    {/* <small>
+                      <RateReviewIcon fontSize="smaller"></RateReviewIcon>
+                    </small> */}
+
                 <Paper elevation={3}>
-                  <Button color="Primary" style={{backgroundColor:"yellowgreen",color:"white"}} onClick={() => setShowNewChatForm(true)}>
-                    New Chat
-                  </Button>
+                  <div className="new-chat" style={{fontSize:"10px"}}>
+                    <center>
+                      <Button style={{backgroundColor:"yellowgreen"}} onClick={() => setShowNewChatForm(true)}>
+                      <span>Create New Chat</span>
+                      </Button>
+                    </center>
+                  </div>
                   <AppBar position="static" color="default">
                     <Tabs
                       indicatorColor="primary"

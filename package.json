@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "classnames": "^2.2.6",
     "firebase": "^8.6.3",
     "lodash": "^4.17.15",
@@ -12,7 +13,8 @@
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "webrtc-adapter": "^7.7.0"
   },
   "repository": {
     "type": "git",

@@ -1,8 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import { auth, firestore } from '../components/firebase/firebase';
 import ChatSection from '../components/sections/ChatSection'
-
-
+import VideoChatContainer from '../components/sections/Videocall/VideoChatContainer'
+import {Link, Redirect, Route} from "react-router-dom"
+// import Chat from '../components/sections/Chat';
 function Dashboard(props) {
     const [email,setEmail] = useState(null);
     // const [newChatFormVisible,setChatFormVisible] = useState(false);
@@ -138,6 +139,9 @@ function Dashboard(props) {
             allUserData = {allUserData}
             searchChat={(search)=>searchChat(search)}
             />
+           
+            {/* <VideoChatContainer></VideoChatContainer> */}
+            
         </>
     )
 }

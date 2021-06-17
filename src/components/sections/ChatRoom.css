@@ -1,0 +1,116 @@
+.card-header
+{
+    background-color: #393E46;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    line-height: 2;
+}
+.user_info>span{
+    font-family: monospace;
+    font-weight: bold;
+    /* padding-left: 20px; */
+    /* border-radius: 20px; */
+    /* border: 1px dotted blue; */
+}
+.card-body
+{
+    background-image: url("https://i.pinimg.com/originals/31/20/02/312002e72be57b51e983f90fb1fdcf6b.jpg");
+
+    background-color: #2B4965;
+    margin:auto;
+    padding:15px;
+    border:1px solid #40434C;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    /* border-radius: 15px; */
+    height: fit-content;
+    /* max-width: 300px; */
+    justify-content: center;
+    max-height: fit-content;
+}
+.Oponent_message{
+    background-color: #4B4453;
+    border-radius: 999px;
+    padding: 5px;
+    padding-left: 10px;
+    color: white;
+    width: fit-content;
+
+}
+
+.Oponent_message > span{
+
+    font-weight: lighter;
+    font-size: 10px;
+    display: inline-flex;
+    flex-direction: row;
+    color: black;
+    visibility: hidden;
+}
+.sender_contain{
+    display: flex;
+    flex-direction: row-reverse;
+   
+    /* justify-content: right; */
+}
+.sender{
+  
+    position:-ms-page;
+    background-color: #009167;
+    color: white;
+    border-radius: 999px;
+    padding: 5px;
+    padding-left: 10px;
+    width: fit-content;
+    /* padding-right: 0px; */
+    margin-right: 0px;
+    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 5px;
+    
+}
+.sender > span{
+    visibility: hidden;
+}
+.card-footer{
+    display: flex;
+    justify-content: center;
+}
+.input-group{
+    display: inline-flex;
+    align-items: baseline;
+    
+}
+.type_msg:focus{
+    outline-style: none;
+}
+.type_msg{
+    border-radius: 95px;
+    background-color: wheat;
+    padding: 10px;
+    height: 6vw;
+    padding-left: 20px;
+    margin-top: 30px;
+
+}
+
+div > .send_btn{
+    background-color: transparent;
+    color: white;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+div> .send_btn:hover{
+    background-color: #009674;
+}

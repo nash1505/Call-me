@@ -3,8 +3,9 @@ import Paper from "@material-ui/core/Paper";
 import classNames from "classnames";
 import { Typography } from "@material-ui/core";
 import { auth, firestore } from '../firebase/firebase'
-
-import Divider from "@material-ui/core/Divider";
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
+import "./Signup.css";
 
 function SignUp({
   className,
@@ -88,53 +89,64 @@ function SignUp({
       <section {...props} className={outerClasses}>
         <div className="container">
           <div className={innerClasses}>
-            <Paper elevation={3} square>
-              <Typography variant="h5" color="primary" align="center">
-                SignUp
-              </Typography>
-              <Divider />
-              <input
-                className="email p-2"
-                type="text"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value.toLowerCase());
-                }}
-                placeholder="Name"
-              />
-              <Divider />
-              <input
-                className="email p-2"
-                type="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value.toLowerCase());
-                }}
-                placeholder="Email"
-              />
+            <Paper elevation={0} square align="center" style={{backgroundColor:"transparent"}}>
+              <div className="form-component">
+                <Typography variant="h5" color="primary" align="center">
+                  SignUp
+                </Typography>
+              </div>
+              {/* <Divider /> */}
+              
+              <div className="form-component">
+                <Input
+                  className="email p-2"
+                  type="text"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value.toLowerCase());
+                  }}
+                  placeholder="Name"
+                />
+              </div>
+              {/* <Divider /> */}
+              <div className="form-component">
+                <Input
+                  className="email p-2"
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value.toLowerCase());
+                  }}
+                  placeholder="Email"
+                />
+              </div>
 
-              <Divider />
-              <input
-                className="password p-2"
-                type="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-                placeholder="Password"
-              />
-              <Divider />
-              <button
-                className="btn login-btn mt-2"
-                style={{
-                  backgroundColor: "#7536e2",
-                  color: "white",
-                  borderRadius: "50px",
-                }}
-                onClick={() =>createUser()}
-              >
-                Signup
-              </button>
+              {/* <Divider /> */}
+              <div className="form-component">
+                <Input
+                  className="password p-2"
+                  type="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                  placeholder="Password"
+                />
+              </div>
+              {/* <Divider /> */}
+              <div className="form-component">
+                <Button
+                  className="btn login-btn mt-2"
+                  style={{
+                    backgroundColor: "#7536e2",
+                    color: "white",
+                    borderRadius: "50px",
+                  }}
+                  onClick={() =>createUser()}
+                >
+                  Signup
+                </Button>
+              </div>
             </Paper>
           </div>
         </div>

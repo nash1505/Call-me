@@ -1,4 +1,7 @@
 import React,{useState,useEffect} from 'react'
+import "./newChatForm.css"
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
 import {firestore} from "../firebase/firebase"
 function NewChatForm(props) {
     const [email,setEmail] = useState("")
@@ -137,23 +140,20 @@ function NewChatForm(props) {
 
     return (
         <div
-        className="center container-fluid p-5"
-        style={{
-          backgroundColor: "white",
-          width: "90vw",
-          borderRadius: "20px",
-        }}
+        className="container"
       >
         {loading === false ? (
           <div className="row">
             {/* <div className="col-lg-6 col-sm-12 col-xs-12">
               <img src={NewMsg} style={{ width: "100%" }} />
             </div> */}
-            <div className="col-lg-6 col-sm-12 col-xs-12 flex2">
-              <h3>Lets Create New Chat</h3>
+            <div className="header">
+              <div className="title">
+                <span>Lets Create New Chat</span>
+              </div>
 
-              <div>
-                <input
+              <div className="form-component">
+                <Input
                   type="text"
                   placeholder="Enter Your Friend Username"
                   value={username}
@@ -166,8 +166,8 @@ function NewChatForm(props) {
                 />
               </div>
 
-              <div className="mt-3">
-                <input
+              <div className="form-component">
+                <Input
                   type="text"
                   placeholder="Enter Message"
                   value={msg}
@@ -180,21 +180,21 @@ function NewChatForm(props) {
                 />
               </div>
 
-              <div className="mt-3">
-                <button
+              <div className="form-component">
+                <Button
                   className="btn btn-secondary"
                   onClick={() => props.backButtonClick()}
                 >
                   Back
-                </button>
+                </Button>
 
-                <button
-                  className="btn text-light ml-3"
+                <Button
+                  className=""
                   style={{ backgroundColor: "#6b38d1" }}
                   onClick={() => submitNewChat()}
                 >
                   Create
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -227,7 +227,7 @@ function NewChatForm(props) {
                           style={{ border: "1px solid white" }}
                         /> */}
 
-                        <div>
+                        <div className="Result-list">
                           <h4 style={{ textAlign: "left" }}>{data.name}</h4>
                         </div>
                       </div>
@@ -235,7 +235,7 @@ function NewChatForm(props) {
                   ))}
                 </div>
               ) : (
-                <div>No Result</div>
+                <div className="Results">No Result</div>
               )}
             </div>
           </div>

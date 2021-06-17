@@ -1,0 +1,25 @@
+.videos{
+    margin-top: 10%;
+    background-color: #24272b;
+    box-shadow: black;
+    width: max-content;
+    /* align-self: center; */
+    border-radius: 5px;
+}
+
+#webcamVideo{
+    height: 50%;
+    /* width: 50%; */
+    border-radius: 5px;
+    border: 1px solid wheat;
+    border: box;
+    margin: auto;
+}
+ul{
+    display: inline;
+    text-decoration: none;
+}
+ul li {
+    
+    text-decoration: none;
+}

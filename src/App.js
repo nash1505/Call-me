@@ -13,6 +13,7 @@ import Dashboard from './views/Dashboard'
 import Login from './components/sections/Login';
 import SignUp from './components/sections/SignUp';
 import VideoConference from './components/sections/VideoConference'
+import VideoChatContainer from './components/sections/Videocall/VideoChatContainer';
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
@@ -44,6 +45,7 @@ const App = () => {
           <AppRoute exact path="/videoconference" component={VideoConference} layout={LayoutDefault} />
           <AppRoute exact path="/login" component={Login} layout={LayoutDefault} />
           <AppRoute exact path="/sign" component={SignUp} layout={LayoutDefault} />
+          <AppRoute exact path="/videocall/:id" component={VideoChatContainer} layout={LayoutDefault} />
         </Switch>
       )} />
   );
